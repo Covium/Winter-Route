@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --spacing: 1px;
+
+  --font-roboto: 'Roboto', sans-serif;
+
+  --color-white: #fbfbfe;
+  --color-white-soft: #f3f3f6;
+  --color-white-mute: #ededf0;
+
+  --color-black: #050315;
+  --color-black-soft: #323140;
+  --color-black-mute: #151325;
+
+  --color-blue: #110bc1;
+  --color-blue-mute: #deddfd;
+
+  --color-pink: #ff3c7a;
+  --color-pink-soft: #fd9cbc;
+
+  --color-primary: var(--color-blue);
+  --color-primary-contrast: var(--color-white);
+  --color-secondary: var(--color-blue-mute);
+  --color-accent: var(--color-pink);
+  --color-accent-contrast: var(--color-white);
+  --color-accent-soft: var(--color-pink-soft);
+
+  --divider-light-1: var(--color-blue);
+  --divider-light-2: var(--color-blue-mute);
+  --divider-dark-1: var(--color-pink);
+  --divider-dark-2: var(--color-pink-soft);
+
+  --text-light-1: var(--color-black);
+  --text-light-2: var(--color-black-soft);
+  --text-dark-1: var(--color-white);
+  --text-dark-2: var(--color-white-soft);
+
+  --section-gap: 160px;
+}
+
+@theme {
+  --color-background: var(--color-white);
+  --color-background-soft: var(--color-white-soft);
+  --color-background-mute: var(--color-white-mute);
+  --color-background-contrast: var(--color-black);
+
+  --color-border: var(--divider-light-1);
+  --color-border-soft: var(--divider-light-2);
+
+  --color-heading: var(--text-light-1);
+  --color-heading-soft: var(--text-light-2);
+  --color-text: var(--text-light-1);
+  --color-text-soft: var(--text-light-2);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: var(--color-black);
+    --color-background-soft: var(--color-black-soft);
+    --color-background-mute: var(--color-black-mute);
+
+    --color-border: var(--divider-dark-2);
+    --color-border-hover: var(--divider-dark-1);
+
+    --color-heading: var(--text-dark-1);
+    --color-text: var(--text-dark-2);
+  }
+} */
+
+body {
+  min-height: 100dvh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 20px;
+  font-family:
+    Roboto,
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

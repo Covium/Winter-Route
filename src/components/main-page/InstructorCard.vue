@@ -20,7 +20,7 @@ defineProps({
 function getSkillNames(skillIds: number[]): string[] {
   const skillNames = []
   for (const skillId of skillIds) {
-    const skillName = skillsList.find((skill) => skill.id === skillId)?.name || '<Неизвестный>'
+    const skillName = skillsList.find((skill) => skill.id === skillId)?.name || '[Неизвестный]'
     skillNames.push(skillName)
   }
 

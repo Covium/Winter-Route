@@ -22,7 +22,7 @@ const subskillsLearnedPercent = (skill: PersonalSkill) => {
   <InformationCard>
     <div class="text-primary flex gap-6">
       <CenterFrame width="24px" height="24px" class="shrink-0"><IconChecklist /></CenterFrame>
-      <span class="max-w-full text-lg">{{ skill.name }}</span>
+      <span class="overflow-hidden text-lg break-words">{{ skill.name }}</span>
     </div>
     <hr />
     <p>

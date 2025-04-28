@@ -53,6 +53,8 @@
   --color-heading-soft: var(--text-light-2);
   --color-text: var(--text-light-1);
   --color-text-soft: var(--text-light-2);
+
+  --pattern-bg: url(@/assets/card-background.svg);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -60,12 +62,17 @@
     --color-background: var(--color-black);
     --color-background-soft: var(--color-black-soft);
     --color-background-mute: var(--color-black-mute);
+    --color-background-contrast: var(--color-white);
 
     --color-border: var(--divider-dark-2);
     --color-border-hover: var(--divider-dark-1);
 
     --color-heading: var(--text-dark-1);
+    --color-heading-soft: var(--text-dark-2);
     --color-text: var(--text-dark-2);
+    --color-text-soft: var(--text-dark-2);
+
+    --pattern-bg: url(@/assets/card-background-dark.svg);
   }
 } */
 

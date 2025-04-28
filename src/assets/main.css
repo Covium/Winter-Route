@@ -4,21 +4,6 @@
   @apply bg-primary m-0 h-dvh w-dvw;
 }
 
-h1,
-.logo-text {
-  @apply text-[24px] leading-32 font-bold text-white;
-}
-
-h2,
-.navigation-link,
-.card-name {
-  @apply text-[20px] leading-24 font-medium;
-}
-
-.small-text {
-  @apply text-[12px] leading-16;
-}
-
 .titled-text {
   @apply cursor-help underline decoration-dotted;
 }

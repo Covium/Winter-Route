@@ -28,7 +28,7 @@ defineProps({
       <slot />
     </CenterFrame>
     <p
-      class="navigation-link text-primary-contrast transition-opacity duration-300"
+      class="text-primary-contrast text-lg transition-opacity duration-300"
       :class="collapsed ? 'opacity-0' : 'opacity-100'"
     >
       {{ title }}

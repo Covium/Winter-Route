@@ -20,7 +20,7 @@ defineProps({
   <InformationCard>
     <div class="text-primary flex gap-6">
       <CenterFrame width="24px" height="24px"><IconOfficeBuilding /></CenterFrame>
-      <h2>{{ sportCenter.name }}</h2>
+      <span class="text-lg">{{ sportCenter.name }}</span>
     </div>
     <hr />
     <p><b>Адрес:</b> {{ sportCenter.address }}</p>

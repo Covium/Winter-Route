@@ -43,7 +43,7 @@ function getSkillNames(skillIds: number[]): string[] {
           {{ instructor.officiality ? 'О' : 'Н' }}
         </CenterFrame>
       </CenterFrame>
-      <div class="card-name flex flex-col gap-0 truncate">
+      <div class="flex flex-col gap-0 truncate text-lg [&>*]:max-w-full [&>*]:text-ellipsis">
         <span>{{ instructor.surname }}&nbsp;</span>
         <span>{{ instructor.name }}&nbsp;</span>
         <span>{{ instructor.patronymic }}</span>

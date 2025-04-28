@@ -25,7 +25,9 @@ const sportCentersAmountText = computed(() => {
 
 <template>
   <div class="border-accent flex w-full flex-col rounded-[9px] border-2">
-    <div class="bg-accent flex h-50 items-center px-18"><h1>Общая статистика</h1></div>
+    <div class="bg-accent flex h-50 items-center px-18">
+      <h1 class="text-accent-contrast text-xl">Общая статистика</h1>
+    </div>
     <StatisticsSegment :title="`Ваши навыки: ${skills.length}`">
       <SkillCard v-for="skill in skills" :key="skill.id" :skill />
     </StatisticsSegment>

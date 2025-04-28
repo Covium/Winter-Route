@@ -9,7 +9,7 @@ import IconPerson from '@/components/icons/IconPerson.vue'
   <header class="text-primary-contrast flex h-50 w-full justify-between gap-9 p-9">
     <div class="flex items-center gap-9 select-none">
       <CenterFrame width="32px" height="32px"><IconLogo /></CenterFrame>
-      <p class="logo-text">Winter Route</p>
+      <p class="overflow-hidden text-xl whitespace-nowrap">Winter Route</p>
     </div>
     <div class="flex gap-9">
       <CenterFrame width="32px" height="32px"><IconBell /></CenterFrame>
@@ -17,9 +17,3 @@ import IconPerson from '@/components/icons/IconPerson.vue'
     </div>
   </header>
 </template>
-
-<style scoped lang="css">
-.logo-text {
-  @apply overflow-hidden whitespace-nowrap;
-}
-</style>

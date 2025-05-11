@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CenterFrame from '@/components/utils/CenterFrame.vue'
+import { isMobile } from '@/features/helpers/isMobile'
 
 defineProps({
   to: {
@@ -8,7 +9,7 @@ defineProps({
   },
   title: {
     type: String,
-    required: true,
+    default: '',
   },
   collapsed: {
     type: Boolean,
@@ -18,17 +19,30 @@ defineProps({
 </script>
 
 <template>
+  <RouterLink
+    v-if="isMobile"
+    :to
+    class="flex w-full min-w-70 flex-col items-center transition-all"
+    activeClass="current-link"
+  >
+    <CenterFrame width="32px" height="32px">
+      <slot />
+    </CenterFrame>
+    <p class="max-w-full grow truncate text-sm font-bold">{{ title }}</p>
+  </RouterLink>
+
   <component
+    v-else
     :is="to ? 'RouterLink' : 'div'"
     v-bind="to ? { to, title: collapsed ? title : '' } : {}"
-    class="transition-color flex cursor-pointer items-center gap-6 pb-9 duration-300 last:pb-0"
+    class="flex cursor-pointer items-center gap-6 pb-9 transition-all duration-300 last:pb-0"
     activeClass="current-link"
   >
     <CenterFrame width="32px" height="32px" class="shrink-0">
       <slot />
     </CenterFrame>
     <p
-      class="text-primary-contrast text-lg transition-opacity duration-300"
+      class="text-lg transition-opacity duration-300"
       :class="collapsed ? 'opacity-0' : 'opacity-100'"
     >
       {{ title }}

@@ -4,6 +4,9 @@
 @theme {
   --spacing: 1px;
 
+  --breakpoint-*: initial;
+  --breakpoint-desktop: 451px;
+
   --font-roboto: 'Roboto', sans-serif;
 
   --color-white: #fbfbfe;
@@ -92,6 +95,27 @@
     --pattern-bg: url(@/assets/card-background-dark.svg);
   }
 } */
+
+@layer base {
+  html[mobile='true'] body {
+    --text-sm: 12px;
+    --text-sm--line-height: 16px;
+    --text-sm--font-weight: 400;
+    --text-sm--font-weight--bold: 700;
+
+    --text-base: 14px;
+    --text-base--line-height: 28px;
+    --text-base--font-weight: 400;
+
+    --text-lg: 18px;
+    --text-lg--line-height: 22px;
+    --text-lg--font-weight: 500;
+
+    --text-xl: 20px;
+    --text-xl--line-height: 26px;
+    --text-xl--font-weight: 700;
+  }
+}
 
 body {
   min-height: 100dvh;

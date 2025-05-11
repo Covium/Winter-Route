@@ -4,8 +4,10 @@ import IconHome from '@/components/icons/IconHome.vue'
 import IconBookWithStar from '@/components/icons/IconBookWithStar.vue'
 import IconBachelorHat from '@/components/icons/IconBachelorHat.vue'
 import IconOfficeBuilding from '@/components/icons/IconOfficeBuilding.vue'
+import IconPerson from '@/components/icons/IconPerson.vue'
 import IconArrowHeads from '@/components/icons/IconArrowHeads.vue'
 import { ref, onMounted, nextTick } from 'vue'
+import { isMobile } from '@/features/helpers/isMobile'
 
 const collapsed = ref(true)
 const expandedWidth = ref('auto')
@@ -15,6 +17,14 @@ const links = [
   { to: '/skills', title: 'Навыки', icon: IconBookWithStar },
   { to: '/instructors', title: 'Инструкторы', icon: IconBachelorHat },
   { to: '/organizations', title: 'Организации', icon: IconOfficeBuilding },
+]
+
+const mobileLinks = [
+  { to: '/organizations', title: 'Организации', icon: IconOfficeBuilding },
+  { to: '/instructors', title: 'Инструкторы', icon: IconBachelorHat },
+  { to: '/', title: 'Главная', icon: IconHome },
+  { to: '/skills', title: 'Навыки', icon: IconBookWithStar },
+  { to: '/profile', title: 'Профиль', icon: IconPerson },
 ]
 
 function getExpandedWidth() {
@@ -52,6 +62,17 @@ window.onload = () => {
 
 <template>
   <div
+    v-if="isMobile"
+    id="navigation-panel"
+    class="text-primary-contrast flex h-50 justify-between overflow-x-auto overflow-y-hidden"
+  >
+    <NavigationLink v-for="link in mobileLinks" :key="link.to" :to="link.to" :title="link.title">
+      <component :is="link.icon" />
+    </NavigationLink>
+  </div>
+
+  <div
+    v-else
     id="navigation-panel"
     class="text-primary-contrast flex flex-col justify-between gap-9 overflow-hidden p-9 transition-all duration-300"
     :style="{ width: collapsed ? '50px' : expandedWidth }"

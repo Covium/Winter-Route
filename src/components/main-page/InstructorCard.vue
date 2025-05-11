@@ -43,7 +43,9 @@ function getSkillNames(skillIds: number[]): string[] {
           {{ instructor.officiality ? 'О' : 'Н' }}
         </CenterFrame>
       </CenterFrame>
-      <div class="flex flex-col gap-0 truncate text-lg [&>*]:overflow-hidden [&>*]:text-ellipsis">
+      <div
+        class="flex flex-col justify-between gap-0 truncate text-lg [&>*]:overflow-hidden [&>*]:text-ellipsis"
+      >
         <span>{{ instructor.surname }}&nbsp;</span>
         <span>{{ instructor.name }}&nbsp;</span>
         <span>{{ instructor.patronymic }}</span>
@@ -55,6 +57,7 @@ function getSkillNames(skillIds: number[]): string[] {
         {{ Instructor.getSexName(instructor.sex) }},
         <span
           :title="`${getLocaleBirthDate(instructor.birthDate)}\nГруппа ${getAgeGroup(instructor.birthDate)}`"
+          data-twe-toggle="tooltip"
           class="titled-text"
         >
           {{ getAgeText(instructor.birthDate) }}

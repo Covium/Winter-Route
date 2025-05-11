@@ -57,7 +57,6 @@ function getSkillNames(skillIds: number[]): string[] {
         {{ Instructor.getSexName(instructor.sex) }},
         <span
           :title="`${getLocaleBirthDate(instructor.birthDate)}\nГруппа ${getAgeGroup(instructor.birthDate)}`"
-          data-twe-toggle="tooltip"
           class="titled-text"
         >
           {{ getAgeText(instructor.birthDate) }}

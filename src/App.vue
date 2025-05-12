@@ -6,13 +6,16 @@ import { isMobile } from '@/features/helpers/isMobile'
 </script>
 
 <template>
-  <HeaderMenu v-if="!isMobile" class="shrink-0" />
-  <div v-if="!isMobile" class="flex grow overflow-hidden">
-    <NavigationPanel class="shrink-0" />
-    <MainSpace class="grow" />
-  </div>
-  <div v-else class="flex grow flex-col overflow-hidden">
+  <template v-if="isMobile">
     <MainSpace class="grow" />
     <NavigationPanel class="shrink-0" />
-  </div>
+  </template>
+
+  <template v-else>
+    <HeaderMenu class="shrink-0" />
+    <div class="flex grow overflow-hidden">
+      <NavigationPanel class="shrink-0" />
+      <MainSpace class="grow" />
+    </div>
+  </template>
 </template>

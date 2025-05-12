@@ -81,17 +81,15 @@ function getSkillNames(skillIds: number[]): string[] {
         {{ instructor.email }}
       </a>
     </div>
+
+    <div :id="`tooltip-instructor-status-${instructor.id}`" class="tooltip invisible opacity-0">
+      {{ instructor.officiality ? 'Официальный инструктор' : 'Неофициальный инструктор' }}
+    </div>
+
+    <div :id="`tooltip-instructor-age-${instructor.id}`" class="tooltip invisible opacity-0">
+      {{ `${getLocaleBirthDate(instructor.birthDate)}` }}
+      <br />
+      {{ `Группа ${getAgeGroup(instructor.birthDate)}` }}
+    </div>
   </InformationCard>
-
-  <div :id="`tooltip-instructor-status-${instructor.id}`" class="tooltip invisible opacity-0">
-    {{ instructor.officiality ? 'Официальный инструктор' : 'Неофициальный инструктор' }}
-    <div data-popper-arrow></div>
-  </div>
-
-  <div :id="`tooltip-instructor-age-${instructor.id}`" class="tooltip invisible opacity-0">
-    {{ `${getLocaleBirthDate(instructor.birthDate)}` }}
-    <br />
-    {{ `Группа ${getAgeGroup(instructor.birthDate)}` }}
-    <div data-popper-arrow></div>
-  </div>
 </template>

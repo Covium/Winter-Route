@@ -38,10 +38,9 @@ const subskillsLearnedPercent = (skill: PersonalSkill) => {
     </p>
     <p><b>Текущий уровень:</b> {{ PersonalSkill.getSkillLevelName(skill.skillLevel) }}</p>
     <p><b>Следующий навык:</b> {{ skill.nextSubskill }}</p>
-  </InformationCard>
 
-  <div :id="`tooltip-skill-progress-${skill.id}`" class="tooltip invisible opacity-0">
-    {{ subskillsLearnedPercent(skill) + '%' }}
-    <div data-popper-arrow></div>
-  </div>
+    <div :id="`tooltip-skill-progress-${skill.id}`" class="tooltip invisible opacity-0">
+      {{ subskillsLearnedPercent(skill) + '%' }}
+    </div>
+  </InformationCard>
 </template>

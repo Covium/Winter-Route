@@ -5,16 +5,21 @@ import IconPerson from '@/components/icons/IconPerson.vue'
 import IconPhoneHandle from '@/components/icons/IconPhoneHandle.vue'
 import IconAt from '@/components/icons/IconAt.vue'
 import { skillsList } from '@/features/helpers/mockData'
-import { type PropType } from 'vue'
+import { type PropType, onMounted } from 'vue'
 import { Instructor } from '@/features/types/instructor'
 import { getLocaleBirthDate, getAgeGroup, getAgeText } from '@/features/helpers/ageGroups'
 import { getCleanedPhoneNumber } from '@/features/helpers/misc'
+import { initFlowbite } from 'flowbite'
 
 defineProps({
   instructor: {
     type: Object as PropType<Instructor>,
     required: true,
   },
+})
+
+onMounted(() => {
+  initFlowbite()
 })
 
 function getSkillNames(skillIds: number[]): string[] {
@@ -34,11 +39,11 @@ function getSkillNames(skillIds: number[]): string[] {
       <CenterFrame width="72px" height="72px" class="bg-primary relative shrink-0 rounded-[5px]">
         <IconPerson class="text-primary-contrast" />
         <CenterFrame
+          :data-tooltip-target="`tooltip-instructor-status-${instructor.id}`"
           width="20px"
           height="20px"
           class="border-primary absolute -top-5 -left-5 cursor-help rounded-full border-1 select-none"
           :class="instructor.officiality ? 'bg-[gold]' : 'bg-[silver]'"
-          :title="instructor.officiality ? 'Официальный инструктор' : 'Неофициальный инструктор'"
         >
           {{ instructor.officiality ? 'О' : 'Н' }}
         </CenterFrame>
@@ -56,8 +61,8 @@ function getSkillNames(skillIds: number[]): string[] {
       <p>
         {{ Instructor.getSexName(instructor.sex) }},
         <span
-          :title="`${getLocaleBirthDate(instructor.birthDate)}\nГруппа ${getAgeGroup(instructor.birthDate)}`"
-          class="titled-text"
+          :data-tooltip-target="`tooltip-instructor-age-${instructor.id}`"
+          class="tooltipped-text"
         >
           {{ getAgeText(instructor.birthDate) }}
         </span>
@@ -77,4 +82,16 @@ function getSkillNames(skillIds: number[]): string[] {
       </a>
     </div>
   </InformationCard>
+
+  <div :id="`tooltip-instructor-status-${instructor.id}`" class="tooltip invisible opacity-0">
+    {{ instructor.officiality ? 'Официальный инструктор' : 'Неофициальный инструктор' }}
+    <div data-popper-arrow></div>
+  </div>
+
+  <div :id="`tooltip-instructor-age-${instructor.id}`" class="tooltip invisible opacity-0">
+    {{ `${getLocaleBirthDate(instructor.birthDate)}` }}
+    <br />
+    {{ `Группа ${getAgeGroup(instructor.birthDate)}` }}
+    <div data-popper-arrow></div>
+  </div>
 </template>

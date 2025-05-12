@@ -2,14 +2,19 @@
 import InformationCard from '@/components/main-page/InformationCard.vue'
 import CenterFrame from '@/components/utils/CenterFrame.vue'
 import IconChecklist from '@/components/icons/IconChecklist.vue'
-import { type PropType } from 'vue'
+import { type PropType, onMounted } from 'vue'
 import { PersonalSkill } from '@/features/types/personalSkill'
+import { initFlowbite } from 'flowbite'
 
 defineProps({
   skill: {
     type: Object as PropType<PersonalSkill>,
     required: true,
   },
+})
+
+onMounted(() => {
+  initFlowbite()
 })
 
 const subskillsLearnedPercent = (skill: PersonalSkill) => {
@@ -27,11 +32,16 @@ const subskillsLearnedPercent = (skill: PersonalSkill) => {
     <hr />
     <p>
       <b>Изучено навыков:</b>{{ ' ' }}
-      <span :title="subskillsLearnedPercent(skill) + '%'" class="titled-text">
+      <span :data-tooltip-target="`tooltip-skill-progress-${skill.id}`" class="tooltipped-text">
         {{ skill.subskillsLearned }} из {{ skill.subskillsAmount }}
       </span>
     </p>
     <p><b>Текущий уровень:</b> {{ PersonalSkill.getSkillLevelName(skill.skillLevel) }}</p>
     <p><b>Следующий навык:</b> {{ skill.nextSubskill }}</p>
   </InformationCard>
+
+  <div :id="`tooltip-skill-progress-${skill.id}`" class="tooltip invisible opacity-0">
+    {{ subskillsLearnedPercent(skill) + '%' }}
+    <div data-popper-arrow></div>
+  </div>
 </template>

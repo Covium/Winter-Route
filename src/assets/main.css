@@ -1,7 +1,4 @@
 @import './base.css';
-@import 'flowbite/src/themes/default';
-@plugin "flowbite/plugin";
-@source "../node_modules/flowbite";
 
 #app {
   @apply bg-primary m-0 h-dvh w-dvw;

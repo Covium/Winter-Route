@@ -45,7 +45,6 @@ function getExpandedWidth() {
 
 function switchCollapsed() {
   collapsed.value = !collapsed.value
-  console.log(collapsed.value)
   localStorage.setItem('navigation-collapsed', String(collapsed.value))
 }
 

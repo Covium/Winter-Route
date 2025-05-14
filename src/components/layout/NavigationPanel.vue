@@ -45,6 +45,7 @@ function getExpandedWidth() {
 
 function switchCollapsed() {
   collapsed.value = !collapsed.value
+  console.log(collapsed.value)
   localStorage.setItem('navigation-collapsed', String(collapsed.value))
 }
 
@@ -77,7 +78,7 @@ window.onload = () => {
     class="text-primary-contrast flex flex-col justify-between gap-9 overflow-hidden p-9 transition-all duration-300"
     :style="{ width: collapsed ? '50px' : expandedWidth }"
   >
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-9">
       <NavigationLink
         v-for="link in links"
         :key="link.to"
@@ -96,16 +97,3 @@ window.onload = () => {
     </NavigationLink>
   </div>
 </template>
-
-<style scoped lang="css">
-@reference '@/assets/base.css';
-
-a:hover,
-.current-link {
-  @apply drop-shadow-[0_0_5px_var(--color-primary-contrast)];
-}
-
-div:has(a:hover:not(a.current-link)) > .current-link {
-  @apply drop-shadow-none;
-}
-</style>

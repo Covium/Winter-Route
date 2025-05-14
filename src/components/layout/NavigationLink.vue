@@ -35,7 +35,7 @@ defineProps({
     v-else
     :is="to ? 'RouterLink' : 'div'"
     v-bind="to ? { to, title: collapsed ? title : '' } : {}"
-    class="flex cursor-pointer items-center gap-6 pb-9 transition-all duration-300 last:pb-0"
+    class="hover:bg-primary-soft flex cursor-pointer items-center gap-6 rounded-[5px] transition-all duration-300 select-none last:pb-0"
     activeClass="current-link"
   >
     <CenterFrame width="32px" height="32px" class="shrink-0">
@@ -49,3 +49,9 @@ defineProps({
     </p>
   </component>
 </template>
+
+<style scoped lang="css">
+.current-link {
+  @apply drop-shadow-[0_0_5px_var(--color-primary-contrast)];
+}
+</style>

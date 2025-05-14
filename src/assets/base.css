@@ -5,7 +5,8 @@
   --spacing: 1px;
 
   --breakpoint-*: initial;
-  --breakpoint-desktop: 451px;
+  --breakpoint-tablet: 451px;
+  --breakpoint-desktop: 1024px;
 
   --font-roboto: 'Roboto', sans-serif;
 

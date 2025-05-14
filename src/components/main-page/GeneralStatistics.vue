@@ -24,7 +24,7 @@ const sportCentersAmountText = computed(() => {
 </script>
 
 <template>
-  <div class="border-accent desktop:rounded-[9px] desktop:border-2 flex w-full flex-col border-b-2">
+  <div class="border-accent tablet:rounded-[9px] tablet:border-2 flex w-full flex-col border-b-2">
     <div class="bg-accent sticky top-0 z-10 flex h-50 items-center px-18">
       <h1 class="text-accent-contrast text-xl">Общая статистика</h1>
     </div>

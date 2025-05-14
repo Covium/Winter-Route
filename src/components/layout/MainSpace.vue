@@ -8,10 +8,10 @@ import { isMobile } from '@/features/helpers/isMobile'
     :class="isMobile ? 'pb-2' : 'rounded-tl-[7px] pt-2 pl-2'"
   >
     <div
-      class="border-primary desktop:px-18 desktop:rounded-tl-[5px] h-full w-full overflow-auto"
+      class="border-primary tablet:rounded-tl-[5px] h-full w-full overflow-auto min-[486px]:px-18"
       :class="isMobile ? 'border-b-2' : 'border-t-2 border-l-2'"
     >
-      <div class="desktop:py-18 mx-auto h-fit" :class="isMobile ? '' : 'max-w-720 min-w-360'">
+      <div class="tablet:py-18 mx-auto h-fit" :class="isMobile ? '' : 'max-w-720 min-w-360'">
         <RouterView />
       </div>
     </div>

@@ -2,7 +2,6 @@
 import CenterFrame from '@/components/utils/CenterFrame.vue'
 import IconLogo from '@/components/icons/IconLogo.vue'
 import IconBell from '@/components/icons/IconBell.vue'
-import IconPerson from '@/components/icons/IconPerson.vue'
 </script>
 
 <template>

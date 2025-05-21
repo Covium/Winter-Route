@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import StatisticsSegment from '@/components/main-page/StatisticsSegment.vue'
-import SkillCard from '@/components/main-page/SkillCard.vue'
-import InstructorCard from '@/components/main-page/InstructorCard.vue'
-import SportCentersCard from '@/components/main-page/SportCenterCard.vue'
+import StatisticsSegment from '@/components/pages/main-page/StatisticsSegment.vue'
+import SkillCard from '@/components/pages/main-page/SkillCard.vue'
+import InstructorCard from '@/components/pages/main-page/InstructorCard.vue'
+import SportCentersCard from '@/components/pages/main-page/SportCenterCard.vue'
 import { computed } from 'vue'
 import { skills, instructors, sportCenters } from '@/features/helpers/mockData'
 

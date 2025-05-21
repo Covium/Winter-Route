@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InformationCard from '@/components/main-page/InformationCard.vue'
+import InformationCard from '@/components/pages/main-page/InformationCard.vue'
 import CenterFrame from '@/components/utils/CenterFrame.vue'
 import IconChecklist from '@/components/icons/IconChecklist.vue'
 import { type PropType, onMounted } from 'vue'

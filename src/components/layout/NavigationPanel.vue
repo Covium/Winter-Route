@@ -4,7 +4,6 @@ import IconHome from '@/components/icons/IconHome.vue'
 import IconBookWithStar from '@/components/icons/IconBookWithStar.vue'
 import IconBachelorHat from '@/components/icons/IconBachelorHat.vue'
 import IconOfficeBuilding from '@/components/icons/IconOfficeBuilding.vue'
-import IconPerson from '@/components/icons/IconPerson.vue'
 import IconArrowHeads from '@/components/icons/IconArrowHeads.vue'
 import { ref, onMounted, nextTick } from 'vue'
 import { isMobile } from '@/features/helpers/isMobile'
@@ -19,13 +18,7 @@ const links = [
   { to: '/organizations', title: 'Организации', icon: IconOfficeBuilding },
 ]
 
-const mobileLinks = [
-  { to: '/organizations', title: 'Организации', icon: IconOfficeBuilding },
-  { to: '/instructors', title: 'Инструкторы', icon: IconBachelorHat },
-  { to: '/', title: 'Главная', icon: IconHome },
-  { to: '/skills', title: 'Навыки', icon: IconBookWithStar },
-  { to: '/profile', title: 'Профиль', icon: IconPerson },
-]
+const mobileLinks = links.slice().reverse()
 
 function getExpandedWidth() {
   let switchedCollapsed = false

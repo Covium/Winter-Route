@@ -13,7 +13,6 @@ import IconPerson from '@/components/icons/IconPerson.vue'
     </div>
     <div class="flex gap-9">
       <CenterFrame width="32px" height="32px"><IconBell /></CenterFrame>
-      <CenterFrame width="32px" height="32px"><IconPerson /></CenterFrame>
     </div>
   </header>
 </template>

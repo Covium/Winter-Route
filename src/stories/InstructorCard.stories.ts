@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import InstructorCard from '@/components/main-page/InstructorCard.vue'
+import InstructorCard from '@/components/pages/main-page/InstructorCard.vue'
 import { Instructor } from '@/features/types/instructor'
 
 const meta = {

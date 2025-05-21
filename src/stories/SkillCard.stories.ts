@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import SkillCard from '@/components/main-page/SkillCard.vue'
+import SkillCard from '@/components/pages/main-page/SkillCard.vue'
 import { PersonalSkill } from '@/features/types/personalSkill'
 
 const meta = {

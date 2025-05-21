@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import SportCenterCard from '@/components/main-page/SportCenterCard.vue'
+import SportCenterCard from '@/components/pages/main-page/SportCenterCard.vue'
 import { SportCenter } from '@/features/types/sportCenter'
 
 const meta = {

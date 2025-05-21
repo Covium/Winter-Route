@@ -101,11 +101,6 @@
 
 @layer base {
   html[mobile='true'] body {
-    --text-sm: 12px;
-    --text-sm--line-height: 16px;
-    --text-sm--font-weight: 400;
-    --text-sm--font-weight--bold: 700;
-
     --text-base: 14px;
     --text-base--line-height: 28px;
     --text-base--font-weight: 400;

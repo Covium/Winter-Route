@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PageSection from '@/components/utils/PageSection.vue'
 import StatisticsSegment from '@/components/pages/main-page/StatisticsSegment.vue'
 import SkillCard from '@/components/pages/main-page/SkillCard.vue'
 import InstructorCard from '@/components/pages/main-page/InstructorCard.vue'
@@ -24,10 +25,7 @@ const sportCentersAmountText = computed(() => {
 </script>
 
 <template>
-  <div class="border-accent tablet:rounded-[9px] tablet:border-2 flex w-full flex-col border-b-2">
-    <div class="bg-accent sticky top-0 z-10 flex h-50 items-center px-18">
-      <h1 class="text-accent-contrast text-xl">Общая статистика</h1>
-    </div>
+  <PageSection title="Общая статистика">
     <StatisticsSegment :title="`Ваши навыки: ${skills.length}`">
       <SkillCard v-for="skill in skills" :key="skill.id" :skill />
     </StatisticsSegment>
@@ -39,7 +37,7 @@ const sportCentersAmountText = computed(() => {
     <StatisticsSegment :title="`Вы состоите в ${sportCentersAmountText}`">
       <SportCentersCard v-for="sportCenter in sportCenters" :key="sportCenter.id" :sportCenter />
     </StatisticsSegment>
-  </div>
+  </PageSection>
 </template>
 
 <style scoped lang="css">

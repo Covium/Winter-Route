@@ -2,7 +2,7 @@ import '@/assets/main.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from '@/App.vue'
-import GeneralStatistics from '@/components/pages/main-page/GeneralStatistics.vue'
+import GeneralStatistics from '@/components/pages/main-page/HomePage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
